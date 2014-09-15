@@ -802,6 +802,8 @@ int sbox_rmdir(struct tcb *tcp)
             char hpn[PATH_MAX];
             get_hpn_from_fd_and_arg(tcp, AT_FDCWD, 0, hpn, PATH_MAX);
 
+            if (sbox_is_direct(hpn))
+                return 0;
             // clean up all files in the directory
             // NOTE. can be optimized if need
             __sbox_delete_dir(hpn);
