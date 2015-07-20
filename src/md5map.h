@@ -28,23 +28,3 @@ void add_md5_to_map(struct md5map **map, char *key, unsigned char *val)
         }
     });
 }
-
-static
-struct md5map* get_md5_from_map(struct md5map *map, char *key)
-{
-    struct md5map *s;
-    HASH_FIND_STR(map, key, s);
-    return s;
-}
-
-static
-void free_md5map(struct md5map *map)
-{
-    struct md5map *s;
-    struct md5map *tmp;
-
-    HASH_ITER(hh, map, s, tmp) {
-        HASH_DEL(map, s);
-        free(s);
-    }
-}
