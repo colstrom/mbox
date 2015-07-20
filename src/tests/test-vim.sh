@@ -5,10 +5,10 @@
 #
 
 # launching vim
-vim -c ":q"
+vim -u NONE -c ":q"
 
 # delete one line and write
-vim -c ":delete" -c ":wq" tests/NOTE
+vim -u NONE -c ":delete" -c ":wq" tests/NOTE
 
 # launch vi
-vi  -c ":wq" tests/NOTE
+vi  -u NONE -c ":wq" tests/NOTE
