@@ -1,0 +1,23 @@
+Personal notes for building
+===========================
+
+Environment
+-----------
+
+* Building on a Fedora system
+* `yum install libaio-devel`
+
+Building
+--------
+
+```
+cd src/
+./configure
+make configsbox.h
+make
+```
+
+To Do
+-----
+
+* Package for RPM
