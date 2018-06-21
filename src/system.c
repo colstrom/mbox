@@ -945,8 +945,10 @@ sys_sysctl(struct tcb *tcp)
 		max_cnt = info.nlen;
 		if (abbrev(tcp) && max_cnt > max_strlen)
 			max_cnt = max_strlen;
-		while (cnt < max_cnt)
-			tprintf(", %x", name[cnt++]);
+		while (cnt < max_cnt) {
+			tprintf(", %x", name[cnt]);
+      cnt++;
+    }
 		if (cnt < info.nlen)
 			tprints(", ...");
 		tprintf("}, %d, ", info.nlen);
